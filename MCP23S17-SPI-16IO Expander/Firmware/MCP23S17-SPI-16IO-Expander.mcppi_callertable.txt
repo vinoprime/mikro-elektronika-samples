@@ -1,0 +1,23 @@
+main
+	SPI1_Init
+	Expander_Init
+		Delay_1us
+		SPI1_Read
+	Expander_Set_DirectionPortAB
+		Expander_Set_DirectionPortB
+			Expander_Write_Byte
+				SPI1_Read
+				Delay_1us
+		Expander_Set_DirectionPortA
+			Expander_Write_Byte
+				SPI1_Read
+				Delay_1us
+	Expander_Write_PortAB
+		Expander_Write_PortB
+			Expander_Write_Byte
+				SPI1_Read
+				Delay_1us
+		Expander_Write_PortA
+			Expander_Write_Byte
+				SPI1_Read
+				Delay_1us
